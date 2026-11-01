@@ -17,6 +17,9 @@ DOCLING_SHA="07154cdc82500058ad9377bac92beed3de820458"
 KS_URL="https://github.com/K-Dense-AI/scientific-agent-skills.git"
 KS_SHA="5f2bc0341354fd5590aef76a533ada1e1e5b4e62"
 
+AX_URL="https://github.com/tt-a1i/archify.git"
+AX_SHA="a4065941f12be7967436261d9934784e381d423c"
+
 # name|url|sha|skill path in the repo
 TABLE='
 watch|$WATCH_URL|$WATCH_SHA|skills/watch
@@ -27,6 +30,7 @@ litreview|$KS_URL|$KS_SHA|skills/literature-review
 exploratory-data-analysis|$KS_URL|$KS_SHA|skills/exploratory-data-analysis
 statistical-analysis|$KS_URL|$KS_SHA|skills/statistical-analysis
 matplotlib|$KS_URL|$KS_SHA|skills/matplotlib
+archify|$AX_URL|$AX_SHA|archify
 '
 
 OUT="" LICENSES_OUT="" PICK=()

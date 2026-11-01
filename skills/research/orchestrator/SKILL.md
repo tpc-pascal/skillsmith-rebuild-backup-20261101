@@ -32,6 +32,10 @@ Applies when the user asks to create or rewrite a report (not for extraction/con
 4. **Web/social/search input** → skill `web`; **media input** → skill `media`. Locked content → let agent-reach/Jina read it; never log in or bypass. **Local-first**: prefer local tools; offline, use only real local/cache sources; fetch third-party skills via `scripts/fetch-session.sh`.
 5. **Always report the file written** (name + path); **verify every `.report.docx`** per skill `paper` (`pdfinfo` + `pdftotext`).
 
+## Third-party skills (fetched per session)
+
+Fetch optional `archify` guidance with `./scripts/fetch-session.sh --skill archify` when the user requests a diagram or explainer. It requires Node.js and writes artifacts under `.archify/`; do not install or update it without approval.
+
 ## Common combined flows
 
 `▸` = hand off to the next step; `→` = flow continues; `[...]` = source/result type.

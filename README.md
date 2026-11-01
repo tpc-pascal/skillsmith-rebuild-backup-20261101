@@ -16,7 +16,7 @@ The repository currently ships one self-contained collection under `skills/` —
 
 | Collection | Skill | Role | Third-party (per session) |
 |---|---|---|---|
-| `research` | [`orchestrator`](skills/research/orchestrator/SKILL.md) | Identify needs and coordinate skills | — |
+| `research` | [`orchestrator`](skills/research/orchestrator/SKILL.md) | Identify needs and coordinate skills | [`archify`](https://github.com/tt-a1i/archify) |
 |  | [`doc`](skills/research/doc/SKILL.md) | Read/convert PDF, DOCX, and XLSX | [`docling`](https://github.com/docling-project/docling), [`exploratory-data-analysis`](https://github.com/K-Dense-AI/scientific-agent-skills), [`statistical-analysis`](https://github.com/K-Dense-AI/scientific-agent-skills), [`matplotlib`](https://github.com/K-Dense-AI/scientific-agent-skills) |
 |  | [`media`](skills/research/media/SKILL.md) | Process video, audio, and images | [`watch`](https://github.com/bradautomates/claude-video) |
 |  | [`web`](skills/research/web/SKILL.md) | Read and search online sources | [`agent-reach`](https://github.com/Panniantong/Agent-Reach) |
