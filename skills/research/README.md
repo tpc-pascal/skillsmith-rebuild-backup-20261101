@@ -25,6 +25,7 @@ Third-party skills are fetched with `scripts/fetch-session.sh` (URL + commit-SHA
 | `litreview` | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | Optional systematic literature review guidance for `paper`; disclose external queries |
 | `exploratory-data-analysis` | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | Optional bounded local-data exploration for `doc`; authorized supported files only |
 | `statistical-analysis` | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | Optional statistical-method guidance for `doc`; use an existing local environment |
+| `matplotlib` | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | Optional plotting guidance for `doc`; use an existing local environment |
 
 ## Install
 

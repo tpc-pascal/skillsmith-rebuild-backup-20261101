@@ -22,7 +22,7 @@ Identify the type with `file <f>` and by opening one page.
 |Complex PDF/DOCX (tables, layout) → markdown/JSON|local `docling` CLI, if installed|§1 — PDF >5 pages: `--page-range`, timeout 180|`docling`|
 |XLSX → CSV/markdown|libreoffice headless|§1|—|
 |Authorized local CSV/TSV/JSON data → bounded exploration|local tools; optional `exploratory-data-analysis` guidance|Use only supported formats; do not send data externally|`exploratory-data-analysis`|
-|CSV/XLSX data → statistics/charts|local pandas/matplotlib, if installed|Optional `statistical-analysis` guidance; use only an existing isolated environment|`statistical-analysis`|
+|CSV/XLSX data → statistics/charts|local libraries, if installed|Optional statistical/plotting guidance; use an existing isolated environment|`statistical-analysis`, `matplotlib`|
 |Merge/split/rotate/extract PDF pages|`qpdf`/`pdftk` + `pdfinfo`/`pdftoppm`|§2|—|
 |Duplex/faded file, quick probe|`pdfinfo` + `pdftotext` (local)|empty/odd text → `pdftoppm` image probe, then `tesseract`|—|
 |MD/text → DOCX/PDF export|local `pandoc`/`libreoffice`|§4|—|
@@ -39,7 +39,7 @@ Identify the type with `file <f>` and by opening one page.
 
 ## Third-party skills (fetched per session)
 
-Optional `docling`, `exploratory-data-analysis`, and `statistical-analysis` guidance can be fetched per session with `./scripts/fetch-session.sh --skill <name>` when requested. Prefer local processing; Docling may download models on first use. Analyze only authorized data, use EDA only for its supported formats, and never send local data to a remote service unless the user explicitly selects it after a data-handling disclosure. Do not auto-install dependencies or modify source data.
+Optional `docling`, `exploratory-data-analysis`, `statistical-analysis`, and `matplotlib` guidance can be fetched per session with `./scripts/fetch-session.sh --skill <name>` when requested. Prefer local processing; Docling may download models on first use. Analyze only authorized data, use EDA only for its supported formats, and never send local data to a remote service unless the user explicitly selects it after a data-handling disclosure. Do not auto-install dependencies or modify source data.
 
 ## references
 
