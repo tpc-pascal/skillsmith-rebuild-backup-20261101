@@ -19,7 +19,7 @@ Identify the type with `file <f>` and by opening one page.
 |---|---|---|---|
 |PDF with text layer, want text|`pdftotext -layout`|§1|—|
 |Scanned PDF/image, want text|OCR `pdftoppm` + `tesseract`|§1|—|
-|Complex PDF/DOCX (tables, layout) → markdown/JSON|local `docling` CLI, if installed|§1 — PDF >5 pages: `--page-range`, timeout 180|—|
+|Complex PDF/DOCX (tables, layout) → markdown/JSON|local `docling` CLI, if installed|§1 — PDF >5 pages: `--page-range`, timeout 180|`docling`|
 |XLSX → CSV/markdown|libreoffice headless|§1|—|
 |CSV/XLSX data → statistics/charts|local pandas/matplotlib, if installed|Run EDA checks and choose tests/charts appropriate to the data|—|
 |Merge/split/rotate/extract PDF pages|`qpdf`/`pdftk` + `pdfinfo`/`pdftoppm`|§2|—|
@@ -38,7 +38,7 @@ Identify the type with `file <f>` and by opening one page.
 
 ## Third-party skills (fetched per session)
 
-This repository currently has no session skills configured. Check `./scripts/fetch-session.sh --list` before attempting a fetch; use only listed skills. The local recipes remain available when their CLIs, libraries, and models are installed or cached.
+Optional `docling` guidance is fetched per session with `./scripts/fetch-session.sh --skill docling` after telling the user what will be fetched. Prefer its local CLI for local files; it may download models on first use. Do not send documents to a remote service unless the user explicitly selects that service after a data-handling disclosure. The local recipes remain available when their CLIs, libraries, and models are installed or cached.
 
 ## references
 
