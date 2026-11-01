@@ -29,6 +29,7 @@ Third-party skills are fetched with `scripts/fetch-session.sh` (URL + commit-SHA
 | `archify` | [tt-a1i/archify](https://github.com/tt-a1i/archify) | Optional diagram and explainer guidance for `orchestrator`; fetch on request |
 | `impeccable` | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Optional frontend design guidance for `web`; ask before execution or installation |
 | `ppt-master` | [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) | Optional presentation-deck guidance for `paper`; use only on request |
+| `taste-skill` | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | Optional frontend art direction for `web`; approve network asset searches |
 
 ## Install
 
