@@ -21,6 +21,7 @@ Third-party skills are fetched with `scripts/fetch-session.sh` (URL + commit-SHA
 | `watch` | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) | Optional video content summaries for `media`; fetched per session |
 | `agent-reach` | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | Optional public web/social reading channels for `web`; explicit provider selection required |
 | `docling` | [docling-project/docling](https://github.com/docling-project/docling) | Optional local document conversion guidance for `doc`; fetched per session |
+| `citation-management` | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | Optional citation search and management for `paper`; disclose external queries |
 
 ## Install
 
