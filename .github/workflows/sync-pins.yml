@@ -1,0 +1,105 @@
+name: Sync Pins — Update Upstream SHAs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch-session.sh"
+      - "scripts/bump-pins.sh"
+  schedule:
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "check = report only, update = open a review PR"
+        type: choice
+        required: true
+        default: update
+        options:
+          - check
+          - update
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Pascal Automation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: 5495945
+          private-key: ${{ secrets.PASCAL_AUTOMATION_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: skillsmith
+
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Check or update upstream pins
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.mode }}" = "check" ]; then
+            bash scripts/bump-pins.sh --check
+          else
+            bash scripts/bump-pins.sh --write
+          fi
+
+      - name: Publish pin report
+        if: always()
+        run: |
+          if [ -f pins-report.md ]; then
+            cat pins-report.md
+            cat pins-report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -s unreachable.txt ]; then
+            cat unreachable.txt >&2
+            exit 1
+          fi
+
+      - name: Prepare pin pull request description
+        if: github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'update')
+        run: |
+          cat > pins-pr-body.md <<'EOF'
+          Work done:
+          - Refresh stale upstream commit pins after validating the fetched skill set.
+
+          Effect:
+          - Present pin changes for maintainer review without updating main directly.
+
+          Benefits:
+          - Keep pinned integrations current while preserving review of upstream changes.
+
+          Files changed: scripts/fetch-session.sh
+          EOF
+          printf '\n\n' >> pins-pr-body.md
+          if [ -f pins-report.md ]; then
+            cat pins-report.md >> pins-pr-body.md
+          fi
+
+      - name: Open review pull request
+        if: github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'update')
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: chore/sync-pins
+          delete-branch: true
+          add-paths: scripts/fetch-session.sh
+          commit-message: |
+            chore(pins): update upstream pins
+
+            Work done:
+            - Refresh stale upstream commit pins after validating the fetched skill set.
+
+            Effect:
+            - Present pin changes for maintainer review without updating main directly.
+
+            Benefits:
+            - Keep pinned integrations current while preserving review of upstream changes.
+
+            Files changed: scripts/fetch-session.sh
+          title: "chore(pins): update upstream pins"
+          body-path: pins-pr-body.md

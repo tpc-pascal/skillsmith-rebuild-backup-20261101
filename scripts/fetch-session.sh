@@ -63,6 +63,16 @@ grab() { # url sha path dest
 for name in "${PICK[@]}"; do
   line=$(grep -E "^$name\|" <<<"$TABLE") || { echo "unknown skill '$name' (see --list)" >&2; exit 1; }
   IFS='|' read -r _ url sha path <<<"$line"
+  if [[ "$url" =~ ^\$([A-Z0-9]+)_URL$ ]]; then
+    variable="${BASH_REMATCH[1]}_URL"
+    url=$(sed -n "s/^${variable}=\"\(.*\)\"$/\1/p" "$0")
+    [ -n "$url" ] || { echo "missing source URL variable $variable" >&2; exit 1; }
+  fi
+  if [[ "$sha" =~ ^\$([A-Z0-9]+)_SHA$ ]]; then
+    variable="${BASH_REMATCH[1]}_SHA"
+    sha=$(sed -n "s/^${variable}=\"\(.*\)\"$/\1/p" "$0")
+    [ -n "$sha" ] || { echo "missing source SHA variable $variable" >&2; exit 1; }
+  fi
   grab "$url" "$sha" "$path" "$name"
   echo "✓ $name → $OUT/$name"
 done
