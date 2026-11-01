@@ -19,6 +19,7 @@ Third-party skills are fetched with `scripts/fetch-session.sh` (URL + commit-SHA
 | Skill | Source | Used for |
 |---|---|---|
 | `watch` | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) | Optional video content summaries for `media`; fetched per session |
+| `agent-reach` | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | Optional public web/social reading channels for `web`; explicit provider selection required |
 
 ## Install
 

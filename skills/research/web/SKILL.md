@@ -16,9 +16,9 @@ Thin self-written skill: **no code of its own** — reads public URLs and search
 |Need|Tool|Notes|Third-party skill|
 |---|---|---|---|
 |Read a public web page/article|direct HTTP request or browser|Fetch the source directly; disclose any external reader used|—|
-|Read a public social post|browser or direct request|If unavailable, ask the user to provide accessible content; never log in or bypass controls|—|
+|Read a public social post|browser, direct request, or selected `agent-reach` channel|Ask before sending a URL/query to an external channel; never log in or bypass controls|`agent-reach`|
 |YouTube/Bilibili → text/auto-captions|`yt-dlp --write-auto-subs --skip-download`|Network required; summarize local media with skill `media`|—|
-|Web search by topic|a configured web-search tool|Disclose the provider and that the query is sent to it|—|
+|Web search by topic|a configured web-search tool or selected `agent-reach` channel|Disclose the provider and get explicit selection before sending the query|`agent-reach`|
 |Broken/slow internet|use user-supplied local content|Do not silently switch to another network service|—|
 
 ## Rules
@@ -26,7 +26,7 @@ Thin self-written skill: **no code of its own** — reads public URLs and search
 1. **Match the input language** — answer in the language the user used.
 2. **Name every output**: fetched file → cache/`<name>.extract.md|.txt`; never overwrite sources; summaries → `<name>.digest.md`.
 3. **Never invent input** — only process real content; no fake URLs or quotes.
-4. **Fetch public URLs directly** when possible. Before sending a URL or query to an external reader/search provider, disclose the provider and obtain the user's selection.
+4. **Fetch public URLs directly** when possible. Before sending a URL or query to an external reader/search provider, disclose the provider and obtain the user's explicit selection.
 5. **Locked content** (social, paywalls) — no login or bypass; tell the user if unreadable and ask for accessible content.
 6. **Offline**: URLs, search, social APIs need connectivity; offline, read only user-supplied local content — this repo never creates a web cache.
 7. **Always report the file written** (name + path) — never silently.
@@ -35,7 +35,7 @@ Thin self-written skill: **no code of its own** — reads public URLs and search
 
 ## Third-party skills (fetched per session)
 
-No third-party skills are currently configured. Check `./scripts/fetch-session.sh --list`; only fetch a skill if it appears there.
+`agent-reach` can provide optional public web and social reading channels. Fetch with `./scripts/fetch-session.sh --skill agent-reach` only when requested. Before using it, name the provider/channel and explain what URL or query will be sent; proceed only after the user selects it. Do not install channels, transfer browser sessions/cookies, log in, or switch backends automatically. Respect rate limits, access controls, and platform terms.
 
 ## references
 
