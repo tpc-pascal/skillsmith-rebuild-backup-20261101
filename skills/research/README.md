@@ -33,6 +33,7 @@ Third-party skills are fetched with `scripts/fetch-session.sh` (URL + commit-SHA
 | `efficient-web-research` | [sickn33/agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) | Optional efficient URL/repository research guidance for `web`; disclose external queries |
 | `wiki-researcher` | [sickn33/agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) | Optional codebase research for `web`; use only authorized repositories |
 | `citation-verification` | [galaxy-dawn/claude-scholar](https://github.com/galaxy-dawn/claude-scholar) | Optional citation-checking guidance for `paper`; approve external queries |
+| `tech-writing-proofread` | [sickn33/agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) | Optional English technical proofreading for `paper`; suggestions only |
 
 ## Install
 
