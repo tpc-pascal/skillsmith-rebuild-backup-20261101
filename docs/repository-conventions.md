@@ -45,6 +45,8 @@ Run `bash scripts/smoke.sh` before committing or opening a pull request. It chec
 
 When checking upstream license declarations, run `python3 scripts/sync-licenses.py --check` after installing the script's documented YAML dependency.
 
+The license and pin synchronization workflows use `GITHUB_TOKEN` to open review pull requests. Enable **Allow GitHub Actions to create and approve pull requests** in repository Actions settings.
+
 ## Adding a collection
 
 1. Add each skill under `skills/<collection>/<skill>/SKILL.md` with `name`, `description`, and `license` frontmatter.

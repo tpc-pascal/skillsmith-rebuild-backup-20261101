@@ -1,0 +1,103 @@
+name: Sync Third-Party Licenses
+
+on:
+  schedule:
+    - cron: "41 4 * * 1"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "check = report drift, update = open a review PR"
+        type: choice
+        required: true
+        default: update
+        options:
+          - check
+          - update
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch-session.sh"
+      - "scripts/sync-licenses.py"
+      - "LICENSE"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Pascal Automation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: 5495945
+          private-key: ${{ secrets.PASCAL_AUTOMATION_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: skillsmith
+
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Wait for the pin sync
+        id: pins
+        run: |
+          if grep -qE '^[A-Z0-9]+_SHA=""$' scripts/fetch-session.sh; then
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "A third-party skill is awaiting its pinned SHA; license sync will retry after pins are updated."
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.pins.outputs.ready == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Install YAML parser
+        if: steps.pins.outputs.ready == 'true'
+        run: python -m pip install pyyaml
+
+      - name: Check license declarations
+        if: steps.pins.outputs.ready == 'true' && github.event_name == 'workflow_dispatch' && inputs.mode == 'check'
+        run: python scripts/sync-licenses.py --check
+
+      - name: Update license declarations
+        if: steps.pins.outputs.ready == 'true' && (github.event_name != 'workflow_dispatch' || inputs.mode == 'update')
+        run: python scripts/sync-licenses.py --write
+
+      - name: Open review pull request
+        if: steps.pins.outputs.ready == 'true' && (github.event_name != 'workflow_dispatch' || inputs.mode == 'update')
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: chore/sync-licenses
+          delete-branch: true
+          add-paths: LICENSE
+          commit-message: |
+            chore(licenses): sync third-party skill declarations
+
+            Work done:
+            - Refresh the third-party license inventory from pinned upstream declarations.
+
+            Effect:
+            - Present license changes for maintainer review without changing main directly.
+
+            Benefits:
+            - Keep upstream license changes visible while preserving human review.
+
+            Files changed: LICENSE
+          title: "chore(licenses): sync third-party skill declarations"
+          body: |
+            Work done:
+            - Refresh the third-party license inventory from pinned upstream declarations.
+
+            Effect:
+            - Present license changes for maintainer review without changing main directly.
+
+            Benefits:
+            - Keep upstream license changes visible and review applicable terms before fetched skills are used.
+
+            Files changed: LICENSE
