@@ -27,6 +27,7 @@ Third-party skills are fetched with `scripts/fetch-session.sh` (URL + commit-SHA
 | `statistical-analysis` | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | Optional statistical-method guidance for `doc`; use an existing local environment |
 | `matplotlib` | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | Optional plotting guidance for `doc`; use an existing local environment |
 | `archify` | [tt-a1i/archify](https://github.com/tt-a1i/archify) | Optional diagram and explainer guidance for `orchestrator`; fetch on request |
+| `impeccable` | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Optional frontend design guidance for `web`; ask before execution or installation |
 
 ## Install
 

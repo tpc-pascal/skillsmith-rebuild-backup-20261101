@@ -20,6 +20,9 @@ KS_SHA="5f2bc0341354fd5590aef76a533ada1e1e5b4e62"
 AX_URL="https://github.com/tt-a1i/archify.git"
 AX_SHA="a4065941f12be7967436261d9934784e381d423c"
 
+IM_URL="https://github.com/pbakaus/impeccable.git"
+IM_SHA="4f956490f0056ae1ff5ea80372cf56e83c001d3c"
+
 # name|url|sha|skill path in the repo
 TABLE='
 watch|$WATCH_URL|$WATCH_SHA|skills/watch
@@ -31,6 +34,7 @@ exploratory-data-analysis|$KS_URL|$KS_SHA|skills/exploratory-data-analysis
 statistical-analysis|$KS_URL|$KS_SHA|skills/statistical-analysis
 matplotlib|$KS_URL|$KS_SHA|skills/matplotlib
 archify|$AX_URL|$AX_SHA|archify
+impeccable|$IM_URL|$IM_SHA|.agents/skills/impeccable
 '
 
 OUT="" LICENSES_OUT="" PICK=()

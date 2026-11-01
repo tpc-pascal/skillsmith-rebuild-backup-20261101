@@ -6,6 +6,7 @@ All notable changes to this repository are documented here. The format follows [
 
 ### Added
 
+- Optional session-fetched `impeccable` frontend design guidance, gated on explicit user requests.
 - Optional session-fetched `archify` guidance for diagrams and explainers.
 - Optional session-fetched plotting guidance for local document-data charts.
 - Optional session-fetched statistical guidance for local research-data analysis.
