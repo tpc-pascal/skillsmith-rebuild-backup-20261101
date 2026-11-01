@@ -29,6 +29,9 @@ PX_SHA="5e8856be0da8e6bc85c4aa28acc614478f7b7137"
 TS_URL="https://github.com/Leonxlnx/taste-skill.git"
 TS_SHA="12af471f627f866411b4bd785b19646d3672784c"
 
+AAS_URL="https://github.com/sickn33/agentic-awesome-skills.git"
+AAS_SHA="1ed5976b000fc0df2910d32ed33717794da1bee2"
+
 # name|url|sha|skill path in the repo
 TABLE='
 watch|$WATCH_URL|$WATCH_SHA|skills/watch
@@ -43,6 +46,7 @@ archify|$AX_URL|$AX_SHA|archify
 impeccable|$IM_URL|$IM_SHA|.agents/skills/impeccable
 ppt-master|$PX_URL|$PX_SHA|skills/ppt-master
 taste-skill|$TS_URL|$TS_SHA|skills/taste-skill
+efficient-web-research|$AAS_URL|$AAS_SHA|plugins/agentic-awesome-skills-claude/skills/efficient-web-research
 '
 
 OUT="" LICENSES_OUT="" PICK=()

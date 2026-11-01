@@ -30,6 +30,7 @@ Third-party skills are fetched with `scripts/fetch-session.sh` (URL + commit-SHA
 | `impeccable` | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Optional frontend design guidance for `web`; ask before execution or installation |
 | `ppt-master` | [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) | Optional presentation-deck guidance for `paper`; use only on request |
 | `taste-skill` | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | Optional frontend art direction for `web`; approve network asset searches |
+| `efficient-web-research` | [sickn33/agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) | Optional efficient URL/repository research guidance for `web`; disclose external queries |
 
 ## Install
 

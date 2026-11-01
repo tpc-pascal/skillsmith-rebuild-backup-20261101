@@ -19,6 +19,7 @@ Thin self-written skill: **no code** — reads public URLs and searches with ava
 |Read a public social post|browser, direct request, or selected `agent-reach` channel|Ask before sending a URL/query to an external channel; never log in or bypass controls|`agent-reach`|
 |YouTube/Bilibili → text/auto-captions|`yt-dlp --write-auto-subs --skip-download`|Network required; summarize local media with skill `media`|—|
 |Web search by topic|a configured web-search tool or selected `agent-reach` channel|Disclose the provider and get explicit selection before sending the query|`agent-reach`|
+|Research a URL or GitHub repository|Optional `efficient-web-research` guidance|Use primary sources; disclose and get approval before sending queries externally|`efficient-web-research`|
 |Design or critique a web interface|Optional `impeccable` guidance|Only when requested; ask before first-run binary download, installation, or hooks|`impeccable`|
 |Design or review a web page or app screen|Optional `taste-skill` guidance|Only when requested; approve external asset searches first|`taste-skill`|
 |Broken/slow internet|use user-supplied local content|Do not silently switch to another network service|—|
@@ -42,6 +43,8 @@ Fetch `agent-reach` only on request. Disclose the provider/channel and URL/query
 Fetch `impeccable` only for requested UI work. It may edit app files or download a first-run binary; ask before running, installing/updating, or enabling hooks.
 
 Fetch `taste-skill` only for requested UI work. It needs Node.js 22+ and a browser, writes under `.taste-skill/`, and may search external assets; disclose and get approval before sharing project details or fetching assets.
+
+Fetch `efficient-web-research` only when requested. Use the host's available tools, treat search snippets as leads rather than evidence, and obtain approval before sending any query to an external provider.
 
 ## references
 
