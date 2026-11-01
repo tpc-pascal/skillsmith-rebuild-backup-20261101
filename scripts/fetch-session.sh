@@ -47,6 +47,7 @@ impeccable|$IM_URL|$IM_SHA|.agents/skills/impeccable
 ppt-master|$PX_URL|$PX_SHA|skills/ppt-master
 taste-skill|$TS_URL|$TS_SHA|skills/taste-skill
 efficient-web-research|$AAS_URL|$AAS_SHA|plugins/agentic-awesome-skills-claude/skills/efficient-web-research
+wiki-researcher|$AAS_URL|$AAS_SHA|plugins/agentic-awesome-skills-claude/skills/wiki-researcher
 '
 
 OUT="" LICENSES_OUT="" PICK=()
