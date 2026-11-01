@@ -9,6 +9,7 @@ All notable changes to this repository are documented here. The format follows [
 - Research request orchestrator with a report-requirements question gate.
 - Local-first document extraction and conversion guidance for PDF, DOCX, and XLSX.
 - Local media processing guidance for video, audio, images, and URLs.
+- Public web and social-source reading guidance with explicit external-service disclosure.
 - SemVer release automation that publishes GitHub Release notes from the matching changelog section.
 - Initial research collection scaffold, including the collection guide, installer, and session-fetch helper.
 - Automated upstream license synchronization through review pull requests.
