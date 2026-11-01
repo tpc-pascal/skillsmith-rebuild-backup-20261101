@@ -37,7 +37,7 @@ Local first: `pandoc <file>.report.md -o <file>.report.docx` or `libreoffice --h
 
 ## Third-party skills (fetched per session)
 
-Optional `citation-management` and `litreview` guidance can be fetched per session with `./scripts/fetch-session.sh --skill <name>` when requested. Their searches use external scholarly services; obtain approval before sending queries, and do not send confidential manuscript text. Do not use authenticated research or AI services unless the user explicitly selects the provider and approves the data flow.
+Optional `citation-management`, `litreview`, and `ppt-master` guidance can be fetched per session with `./scripts/fetch-session.sh --skill <name>` when requested. Scholarly searches use external services; obtain approval before sending queries, and do not send confidential manuscript text. Use `ppt-master` only for requested decks, preserve source files, and ask before installing dependencies or sending content to an external service. Do not use authenticated research or AI services unless the user explicitly selects the provider and approves the data flow.
 
 ## references
 
