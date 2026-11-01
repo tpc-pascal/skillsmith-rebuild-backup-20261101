@@ -32,6 +32,9 @@ TS_SHA="12af471f627f866411b4bd785b19646d3672784c"
 AAS_URL="https://github.com/sickn33/agentic-awesome-skills.git"
 AAS_SHA="66f1301eb4c8bfbdb737c191e76e51e78746a126"
 
+GD_URL="https://github.com/galaxy-dawn/claude-scholar.git"
+GD_SHA="d394fb599ed9e6ea2212a9e6daa864345fe97a26"
+
 # name|url|sha|skill path in the repo
 TABLE='
 watch|$WATCH_URL|$WATCH_SHA|skills/watch
@@ -48,6 +51,7 @@ ppt-master|$PX_URL|$PX_SHA|skills/ppt-master
 taste-skill|$TS_URL|$TS_SHA|skills/taste-skill
 efficient-web-research|$AAS_URL|$AAS_SHA|plugins/agentic-awesome-skills-claude/skills/efficient-web-research
 wiki-researcher|$AAS_URL|$AAS_SHA|plugins/agentic-awesome-skills-claude/skills/wiki-researcher
+citation-verification|$GD_URL|$GD_SHA|skills/citation-verification
 '
 
 OUT="" LICENSES_OUT="" PICK=()

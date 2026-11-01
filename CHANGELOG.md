@@ -6,6 +6,7 @@ All notable changes to this repository are documented here. The format follows [
 
 ### Added
 
+- Optional session-fetched citation-verification guidance, with consent for external checks.
 - Optional session-fetched `wiki-researcher` guidance for evidence-based codebase research.
 - Optional session-fetched efficient web-research guidance with explicit query disclosure.
 - Optional session-fetched `taste-skill` frontend art-direction guidance, with consent for network asset searches.
