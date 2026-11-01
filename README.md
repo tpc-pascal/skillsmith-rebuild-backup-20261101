@@ -20,6 +20,7 @@ The repository currently ships one self-contained collection under `skills/` —
 |  | [`doc`](skills/research/doc/SKILL.md) | Read/convert PDF, DOCX, and XLSX | — |
 |  | [`media`](skills/research/media/SKILL.md) | Process video, audio, and images | — |
 |  | [`web`](skills/research/web/SKILL.md) | Read and search online sources | — |
+|  | [`paper`](skills/research/paper/SKILL.md) | Write international-standard or Vietnamese public-facing reports | — |
 
 Third-party skills are fetched per session via `scripts/fetch-session.sh`, never installed permanently.
 
