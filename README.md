@@ -18,6 +18,7 @@ The repository currently ships one self-contained collection under `skills/` —
 |---|---|---|---|
 | `research` | [`orchestrator`](skills/research/orchestrator/SKILL.md) | Identify needs and coordinate skills | — |
 |  | [`doc`](skills/research/doc/SKILL.md) | Read/convert PDF, DOCX, and XLSX | — |
+|  | [`media`](skills/research/media/SKILL.md) | Process video, audio, and images | — |
 
 Third-party skills are fetched per session via `scripts/fetch-session.sh`, never installed permanently.
 
