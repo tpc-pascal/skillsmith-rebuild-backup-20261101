@@ -10,17 +10,13 @@
 
 > Compatibility depends on the operating system, agent, and tools required by each skill. Check the skill guide before running it.
 
-The repository currently ships one self-contained collection under `skills/` — every skill installs on its own: [`skills/research/`](skills/research/README.md) (research and reporting).
+The repository currently ships one self-contained collection under `skills/` — every skill installs on its own: [`skills/research/`](skills/research/README.md) (research workflows).
 
 ## Skills
 
 | Collection | Skill | Role | Third-party (per session) |
 |---|---|---|---|
 | `research` | [`orchestrator`](skills/research/orchestrator/SKILL.md) | Identify needs and coordinate skills | — |
-|  | [`doc`](skills/research/doc/SKILL.md) | Read/convert PDF, DOCX, and XLSX | — |
-|  | [`media`](skills/research/media/SKILL.md) | Process video, audio, and images | — |
-|  | [`web`](skills/research/web/SKILL.md) | Read and search online sources | — |
-|  | [`paper`](skills/research/paper/SKILL.md) | Write international-standard or Vietnamese public-facing reports | — |
 
 Third-party skills are fetched per session via `scripts/fetch-session.sh`, never installed permanently.
 
@@ -45,7 +41,7 @@ claude plugin marketplace add tpc-pascal/skillsmith
 claude plugin install <collection>@skillsmith
 ```
 
-Working inside a clone? OpenCode discovers every skill through `.opencode/skills/` — no install step. Per-tool guides: [OpenCode](docs/opencode-setup.md), [Claude Code](docs/claude-code-setup.md), [Cursor](docs/cursor-setup.md).
+Working inside a clone? OpenCode discovers every skill through `.agents/skills/` — no install step. Per-tool guides: [OpenCode](docs/opencode-setup.md), [Claude Code](docs/claude-code-setup.md), [Cursor](docs/cursor-setup.md).
 
 ## Releases
 
@@ -67,7 +63,7 @@ skills/
       references/     # reference material (optional)
 scripts/              # smoke.sh, fetch-session.sh, install.sh, release.sh
 .claude-plugin/       # Claude Code marketplace manifest (research)
-.opencode/skills/     # symlinks flattening skills/ for in-place OpenCode discovery
+.agents/skills/       # symlinks flattening skills/ for in-place OpenCode discovery
 docs/                 # per-tool setup guides
 .github/workflows/    # CI running smoke checks
 ```

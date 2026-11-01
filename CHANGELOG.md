@@ -6,6 +6,7 @@ All notable changes to this repository are documented here. The format follows [
 
 ### Added
 
+- Research request orchestrator with a report-requirements question gate.
 - SemVer release automation that publishes GitHub Release notes from the matching changelog section.
 - Initial research collection scaffold, including the collection guide, installer, and session-fetch helper.
 - Automated upstream license synchronization through review pull requests.
