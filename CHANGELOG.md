@@ -6,6 +6,7 @@ All notable changes to this repository are documented here. The format follows [
 
 ### Added
 
+- Optional session-fetched `watch` integration for video summaries in the media workflow.
 - Research request orchestrator with a report-requirements question gate.
 - Local-first document extraction and conversion guidance for PDF, DOCX, and XLSX.
 - Local media processing guidance for video, audio, images, and URLs.

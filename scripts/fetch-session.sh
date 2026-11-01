@@ -5,8 +5,12 @@
 set -euo pipefail
 
 
+WATCH_URL="https://github.com/bradautomates/claude-video.git"
+WATCH_SHA="03ceb42f7fa2c4439aca01752118044baabffb8f"
+
 # name|url|sha|skill path in the repo
 TABLE='
+watch|$WATCH_URL|$WATCH_SHA|skills/watch
 '
 
 OUT="" LICENSES_OUT="" PICK=()

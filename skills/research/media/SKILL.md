@@ -17,7 +17,7 @@ Identify with `ffprobe`/`file`; for URLs inspect the returned filename.
 |Input + need|Tool|Notes|Third-party skill|
 |---|---|---|---|
 |Media file metadata|`ffprobe` (local)|no session skill needed|—|
-|Video/URL content summary|local `yt-dlp` subtitles or `whisper` transcript|Summarize available captions or a locally transcribed file; URLs need connectivity|—|
+|Video/URL content summary|`watch` or local `yt-dlp`/`whisper`|Prefer local processing; fetch `watch` only when requested. Cloud processing requires explicit user choice.|`watch`|
 |Video/URL text extraction (SRT/VTT)|`whisper` (local)|`whisper <file> --model tiny --write-subs`; install the CLI/model first|—|
 |Cut/concat/transcode, GIF, frames, loudness|`ffmpeg` (local)|`-ss`/`-t`, concat demuxer, GIF/fps/volume filters|—|
 |Subtitles: extract, shift, convert, burn|`ffmpeg` (local)|`subtitles=` filter, `-c:s` mux; source `.srt` from whisper or a user-provided file|—|
@@ -37,7 +37,7 @@ Identify with `ffprobe`/`file`; for URLs inspect the returned filename.
 
 ## Third-party skills (fetched per session)
 
-This repository currently has no session skills configured. Check `./scripts/fetch-session.sh --list` before attempting a fetch; use only listed skills.
+Fetch `watch` per session with `./scripts/fetch-session.sh --skill watch`. Before following its setup or processing instructions, explain any required downloads and backend; get explicit user approval before sending media or transcripts to a cloud service. An existing API key is not consent.
 
 ## references
 
