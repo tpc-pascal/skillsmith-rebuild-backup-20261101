@@ -6,6 +6,7 @@ All notable changes to this repository are documented here. The format follows [
 
 ### Added
 
+- Optional session-fetched EDA guidance for bounded exploration of authorized local data.
 - Optional session-fetched `litreview` guidance for literature review workflows.
 - Optional session-fetched citation-management guidance for scholarly reference workflows.
 - Optional session-fetched `docling` guidance for local document conversion.

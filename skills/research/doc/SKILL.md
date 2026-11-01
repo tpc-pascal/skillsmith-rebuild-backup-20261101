@@ -21,6 +21,7 @@ Identify the type with `file <f>` and by opening one page.
 |Scanned PDF/image, want text|OCR `pdftoppm` + `tesseract`|§1|—|
 |Complex PDF/DOCX (tables, layout) → markdown/JSON|local `docling` CLI, if installed|§1 — PDF >5 pages: `--page-range`, timeout 180|`docling`|
 |XLSX → CSV/markdown|libreoffice headless|§1|—|
+|Authorized local CSV/TSV/JSON data → bounded exploration|local tools; optional `exploratory-data-analysis` guidance|Use only supported formats; do not send data externally|`exploratory-data-analysis`|
 |CSV/XLSX data → statistics/charts|local pandas/matplotlib, if installed|Run EDA checks and choose tests/charts appropriate to the data|—|
 |Merge/split/rotate/extract PDF pages|`qpdf`/`pdftk` + `pdfinfo`/`pdftoppm`|§2|—|
 |Duplex/faded file, quick probe|`pdfinfo` + `pdftotext` (local)|empty/odd text → `pdftoppm` image probe, then `tesseract`|—|
@@ -38,7 +39,7 @@ Identify the type with `file <f>` and by opening one page.
 
 ## Third-party skills (fetched per session)
 
-Optional `docling` guidance is fetched per session with `./scripts/fetch-session.sh --skill docling` after telling the user what will be fetched. Prefer its local CLI for local files; it may download models on first use. Do not send documents to a remote service unless the user explicitly selects that service after a data-handling disclosure. The local recipes remain available when their CLIs, libraries, and models are installed or cached.
+Optional `docling` and `exploratory-data-analysis` guidance can be fetched per session with `./scripts/fetch-session.sh --skill <name>` when requested. Prefer local processing; Docling may download models on first use. Analyze only authorized data, use EDA only for its supported formats, and never send local data to a remote service unless the user explicitly selects it after a data-handling disclosure. Do not auto-install dependencies.
 
 ## references
 
