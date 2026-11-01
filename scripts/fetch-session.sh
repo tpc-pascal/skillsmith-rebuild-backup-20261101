@@ -30,7 +30,7 @@ TS_URL="https://github.com/Leonxlnx/taste-skill.git"
 TS_SHA="12af471f627f866411b4bd785b19646d3672784c"
 
 AAS_URL="https://github.com/sickn33/agentic-awesome-skills.git"
-AAS_SHA="1ed5976b000fc0df2910d32ed33717794da1bee2"
+AAS_SHA="66f1301eb4c8bfbdb737c191e76e51e78746a126"
 
 # name|url|sha|skill path in the repo
 TABLE='
