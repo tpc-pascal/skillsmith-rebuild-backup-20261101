@@ -23,6 +23,7 @@ watch|$WATCH_URL|$WATCH_SHA|skills/watch
 agent-reach|$AGENTREACH_URL|$AGENTREACH_SHA|agent_reach/skill
 docling|$DOCLING_URL|$DOCLING_SHA|docling/.agents/skills/docling
 citation-management|$KS_URL|$KS_SHA|skills/citation-management
+litreview|$KS_URL|$KS_SHA|skills/literature-review
 '
 
 OUT="" LICENSES_OUT="" PICK=()

@@ -25,7 +25,7 @@ Shared rules: [`references/output-format.md`](references/output-format.md). Extr
 1. Confirm report form, purpose, audience, language, output format, and source scope; ask only for missing details. If the user delegates decisions, state assumptions.
 2. Use only the selected report framework. Match the requested/contextual language; do not force bilingual output.
 3. Keep `.report.md` on findings/reasoning; raw extracts, large tables, tool logs go to support files (see `references/output-format.md`).
-4. Prefer local tools; disclose and get approval before sending search terms or identifiers to an external source. Never send confidential manuscript text or switch services silently; use optional API keys only when the user has configured them.
+4. Prefer local tools; disclose and get approval before sending search terms or identifiers to an external source. Never send confidential manuscript text or switch services silently; use optional API keys only when the user has configured them and explicitly approved that provider and data flow.
 5. Save `<source_name>.report.md` next to the source; never overwrite sources.
 6. Do not invent data, citations, or page numbers. Cite claims; mark facts vs observations vs inferences.
 7. Check citations/links/consistency; verify DOCX/PDF exports with local tools; disclose unavailable ones.
@@ -37,7 +37,7 @@ Local first: `pandoc <file>.report.md -o <file>.report.docx` or `libreoffice --h
 
 ## Third-party skills (fetched per session)
 
-Optional `citation-management` guidance can be fetched per session with `./scripts/fetch-session.sh --skill citation-management` when requested. Its searches and identifier lookups use external scholarly services; obtain approval before sending queries, and do not send confidential manuscript text.
+Optional `citation-management` and `litreview` guidance can be fetched per session with `./scripts/fetch-session.sh --skill <name>` when requested. Their searches use external scholarly services; obtain approval before sending queries, and do not send confidential manuscript text. Do not use authenticated research or AI services unless the user explicitly selects the provider and approves the data flow.
 
 ## references
 
