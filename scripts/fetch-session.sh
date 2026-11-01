@@ -21,7 +21,7 @@ AX_URL="https://github.com/tt-a1i/archify.git"
 AX_SHA="a4065941f12be7967436261d9934784e381d423c"
 
 IM_URL="https://github.com/pbakaus/impeccable.git"
-IM_SHA="4f956490f0056ae1ff5ea80372cf56e83c001d3c"
+IM_SHA="e89e3ada3e875a89ac2c5d33d11e65ebef6fe285"
 
 # name|url|sha|skill path in the repo
 TABLE='
